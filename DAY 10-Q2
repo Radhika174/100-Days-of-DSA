@@ -1,29 +1,46 @@
+// Online C compiler to run C program online
 #include <stdio.h>
-int main() 
+
+int main() {
+    // Write C code here
+    int n;
+    printf("enter the size of an array\n");
+    scanf("%d", &n);
+int arr1[n];
+for(int i=0;i<n;i++)
 {
-    int nums1[] = {1, 2, 2, 1};
-    int nums2[] = {2, 2};
-    int n1 = sizeof(nums1) / sizeof(nums1[0]);
-    int n2 = sizeof(nums2) / sizeof(nums2[0]);
-    int result[1000];
-    int k = 0;
-    for (int i = 0; i < n1; i++)
+    printf("elements %d=", i+1);
+    scanf("%d", &arr1[i]);
+}
+int s;
+    printf("enter the size of an array\n");
+    scanf("%d", &s);
+int arr2[s];
+for(int i=0;i<s;i++)
+{
+    printf("elements %d=", i+1);
+    scanf("%d", &arr2[i]);
+}
+int found=0;
+for(int i=0;i<n;i++)
+{
+    for(int j=0;j<s;j++)
     {
-        for (int j = 0; j < n2; j++)
+        if(arr1[i]==arr2[j])
         {
-            if (nums1[i] == nums2[j]) 
-            {
-                result[k++] = nums1[i];
-                nums2[j] = -1;
-                break;
-            }
+    
+            found=1;
+            break;
+        }
+        else
+        {
+            found=0;
         }
     }
-
-    for (int i = 0; i < k; i++)
+    if(found==1)
     {
-        printf("%d ", result[i]);
+        printf("%d ", arr1[i]);
     }
-
+}
     return 0;
 }
