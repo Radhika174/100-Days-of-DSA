@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    int nums[n];
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &nums[i]);
+    }
+
+    int found = 0;
+
+    for(int i = 0; i < n - 2; i++)
+{
+        for(int j = i + 1; j < n - 1; j++)
+{
+            for(int k = j + 1; k < n; k++)
+{
+
+                if(nums[i] + nums[j] + nums[k] == 0)
+{
+                    printf("[%d, %d, %d]\n", nums[i], nums[j], nums[k]);
+                    found = 1;
+                }
+
+            }
+        }
+    }
+
+    if(!found) {
+        printf("No triplets found\n");
+    }
+
+    return 0;
+}
